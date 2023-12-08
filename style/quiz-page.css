@@ -1,0 +1,237 @@
+@import url(font.css);
+@import url(variables.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+  font-family: "Fredoka", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  justify-items: center;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  padding: 32px 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a img {
+  height: 65px;
+}
+
+header h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--categories-color);
+  text-align: center;
+}
+
+header .header-quiz-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 46px;
+}
+
+.header-quiz-right .question-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.question-arrows .question-count {
+  width: 100px;
+  height: 46px;
+  background-color: var(--categories-color);
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+.question-arrows .question-count p {
+  color: var(--background-color);
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+}
+
+.question-arrows .left {
+  height: 46px;
+  padding: 10px 18px;
+  border: none;
+  background-color: var(--button-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-arrows .left img {
+  height: 20px;
+}
+
+.question-arrows .right {
+  height: 46px;
+  padding: 10px 18px;
+  border: none;
+  background-color: var(--button-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-arrows .right img {
+  height: 20px;
+}
+
+.question-arrows .right:hover {
+  background-color: var(--categories-color);
+  cursor: pointer;
+}
+
+.question-arrows .left:hover {
+  background-color: var(--categories-color);
+  cursor: pointer;
+}
+
+.header-quiz-right .exit-button button {
+  border: none;
+  width: 100px;
+  height: 46px;
+  background-color: var(--button-color);
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--background-color);
+  font-size: 22px;
+  text-align: center;
+}
+
+.header-quiz-right .exit-button button:hover {
+  background-color: var(--categories-color);
+  cursor: pointer;
+}
+
+.question-area {
+  background-color: var(--background-color);
+  border: var(--categories-color) solid;
+  border-radius: 16px;
+  margin: 0 5%;
+  height: 100%;
+  padding: 16px 200px;
+}
+
+.question-area h2 {
+  color: var(--categories-color);
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.photo-area {
+  margin: 10px 5%;
+  height: 300px;
+}
+
+.photo-area img {
+  border-radius: 36px;
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+}
+
+footer form {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+footer form .choices {
+  background-color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+footer form .choices:hover {
+  background-color: var(--categories-color);
+}
+
+footer form .choices label {
+  color: var(--background-color);
+  font-size: 36px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 16px;
+  text-align: center;
+}
+
+footer form .choices input[type="radio"] {
+  appearance: none;
+  background-color: var(--button-color);
+  margin: 0;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+footer form .choices input[type="radio"]::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 40px 40px var(--background-color);
+  cursor: pointer;
+}
+
+footer form .choices input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 1025px) {
+  body {
+    gap: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  header a img {
+    height: 85px;
+  }
+
+  .question-area {
+    padding: 24px 100px;
+  }
+}
